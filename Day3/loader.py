@@ -3,19 +3,23 @@
 import sqlite3
 import csv
 
-# SETUP TABLE
-# ('IF NOT EXIST')
+# SETUP TABLES
 
 con = sqlite3.connect('news_db.sqlite')
 c = con.cursor()
+
 c.execute(open('create_top_headlines_india.sql', 'r').read())
+
 c.execute(open('create_top_headlines_berlin.sql', 'r').read())
+
 c.execute(open('create_top_headlines_covid19.sql', 'r').read())
+
 c.execute(open('create_publication_reference.sql', 'r').read())
+
 con.commit()
 c.close()
 
-# LOAD
+# LOAD DATA IN THE TABLES
 
 con = sqlite3.connect('news_db.sqlite')
 cur = con.cursor()

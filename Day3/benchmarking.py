@@ -77,9 +77,15 @@ def timed(fun, n=1000):
 q1_time = timed(query1)
 in_q1_time = timed(indexed_query1)
 
+print("Query time without index: ", q1_time, "and with index: ", in_q1_time, "seconds")
+
 q2_time = timed(query2)
 in_q2_time = timed(indexed_query2)
 
+print("Query time without index: ", q2_time, "and with index: ", in_q2_time, "seconds")
+
 q3_time = timed(query3)
-q3_time = timed(indexed_query3)
+in_q3_time = timed(indexed_query3)
+
+print("Query time without index: ", q3_time, "and with index: ", in_q3_time, "seconds")
 

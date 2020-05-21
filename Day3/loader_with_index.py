@@ -4,22 +4,26 @@ import sqlite3
 import csv
 
 # SETUP TABLE
-# ('IF NOT EXIST')
 
 con = sqlite3.connect('indexed_news_db.sqlite')
 c = con.cursor()
+
 c.execute(open('create_top_headlines_india.sql', 'r').read())
 c.execute('CREATE INDEX india_source_id ON top_headlines_india(source_id)')
+
 c.execute(open('create_top_headlines_berlin.sql', 'r').read())
 c.execute('CREATE INDEX berlin_source_id ON top_headlines_berlin(source_id)')
+
 c.execute(open('create_top_headlines_covid19.sql', 'r').read())
 c.execute('CREATE INDEX covid19_source_id ON top_headlines_covid19(source_id)')
+
 c.execute(open('create_publication_reference.sql', 'r').read())
 c.execute('CREATE INDEX reference_source_id ON publication_reference(source_id)')
+
 con.commit()
 c.close()
 
-# LOAD
+# LOAD DATA IN THE TABLES
 
 con = sqlite3.connect('indexed_news_db.sqlite')
 cur = con.cursor()
