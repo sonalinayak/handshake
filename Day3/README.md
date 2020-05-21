@@ -42,3 +42,14 @@ python3 loader_with_index.py
 ```markdown
 python3 benchmarking.py 
 ```
+
+1 Result set of the benchmarking.py
+
+```markdown
+Function=query1, Time=0.41191911697387695
+Function=indexed_query1, Time=0.27697300910949707
+Function=query2, Time=0.41350769996643066
+Function=indexed_query2, Time=0.33147430419921875
+Function=query3, Time=0.33990025520324707
+Function=indexed_query3, Time=0.35175180435180664
+```
